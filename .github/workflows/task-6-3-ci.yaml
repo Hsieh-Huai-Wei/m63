@@ -2,8 +2,7 @@ name: M6-3 CI Workflow
 
 on:
   push:
-    branches:
-      - dev
+    branches: [dev, feat]
   pull_request:
     branches:
       - main

@@ -3,13 +3,9 @@ name: M6-3 CI Workflow
 on:
   push:
     branches: [dev, feat]
-    paths:
-      - 'dev/*.yaml'
   pull_request:
     branches:
       - main
-    paths:
-      - 'dev/*.yaml'
 
 jobs:
   yamllint:
@@ -23,6 +19,6 @@ jobs:
         with:
           yamllint_strict: false
           yamllint_comment: true
-          path: './dev/*.yaml'
+          yamllint_file_or_dir: './dev'
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

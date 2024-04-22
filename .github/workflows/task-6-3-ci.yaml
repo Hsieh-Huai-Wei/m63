@@ -19,5 +19,6 @@ jobs:
         with:
           yamllint_strict: false
           yamllint_comment: true
+          path: 'dev/*.yaml'
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

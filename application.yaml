@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: myapp-argo-application
   namespace: argocd
-  name: webapp
 spec:
-  destination:
-
-    namespace: myapp
-    server: 'https://kubernetes.default.svc'
-  source:
-    path: dev
-    repoURL: 'https://github.com/Hsieh-Huai-Wei/m63.git'
-    targetRevision: main
   project: default
+
+  source:
+    repoURL: 'https://github.com/Hsieh-Huai-Wei/m63.git'
+    targetRevision: HEAD
+    path: .
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: myapp
+    
   syncPolicy:
     automated:
       prune: true

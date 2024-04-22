@@ -19,5 +19,6 @@ jobs:
         with:
           yamllint_strict: false
           yamllint_comment: true
+          yamllint_file_or_dir: './dev'
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

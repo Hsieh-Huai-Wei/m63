@@ -2,10 +2,9 @@ name: M6-3 CI Workflow
 
 on:
   push:
-    branches: [dev, feat]
+    branches: [dev, feat, main]
   pull_request:
-    branches:
-      - main
+    branches: [dev, main]
 
 jobs:
   yamllint:
